@@ -12,46 +12,39 @@
 
 
 \begin{abstract}
-The AWS CloudTrail service is an activity recording service provided by 
-Amazon Web Services. The service allows you to track the history of account 
-usage for your AWS instances. The service is not on by default yet when 
-configured, it will record all API calls from all sources like the console, 
-CLE, SDKs or CloudFormation. The data is written into an S3 bucket via JSON 
-and would include attributes lik user, IP address, timestamp and the action 
-the user took.
+The AWS CloudTrail service~\cite{hid-sp18-518-CloudTrail} is an activity recording service provided by Amazon Web Services. The service allows you to track the history of account usage for your AWS instances. The service is not on by default yet when configured, it will record all API calls from all sources like the console, CLE, SDKs or CloudFormation. The data is written into an S3 bucket via JSON and would include attributes lik user, IP address, timestamp and the action the user took.
 \end{abstract}
 
 \keywords{hid518, CloudTrail}
-
 
 \maketitle
 
 \section{Introduction}
 
-Your API is finally working. After weeks of learning Docker, AWS Lambda and other Cloud technologies, you feel the pride of seeing your code finally providing a service. And that service is on the Internet! Yet, a few days later, you are notified by AWS that your AWS bill is about to reach the cap you set for it. That obviously can’t be right. As you log into your AWS account to check on what is going on, you notice containers running that you don’t recognize. How is this possible? Who did this? That is where CloudTrail can help. (https://aws.amazon.com/cloudtrail/).
+Your API is finally working. After weeks of learning Docker, AWS Lambda and other Cloud technologies, you feel the pride of seeing your code finally providing a service. And that service is on the Internet! Yet, a few days later, you are notified by AWS that your AWS bill is about to reach the cap you set for it. That obviously can’t be right. As you log into your AWS account to check on what is going on, you notice containers running that you don’t recognize. How is this possible? Who did this? That is where CloudTrail~\cite{hid-sp18-518-CloudTrail} can help.
 
 \section{Background}
 
 As cloud technologies are quickly adopted, one of the common mistakes is skipping past features related to security. This paper will cover the aspect of logging and monitoring, both features that are critical to ensuring appropriate use, and the intent is to help build understanding of how these features can help you keep your system uptime high, your bills low and provide you certainty that you know when changes occur.
-In AWS, one of the primary means of providing logging is through AWS CloudTrail. Amazon explains it as a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account (https://aws.amazon.com/cloudtrail/). To simplify, AWS provides a service you can use to meet logging requirements you have personally to logging requirements that are directed by a higher entity such as government or a regulatory body.
+In AWS, one of the primary means of providing logging is through AWS CloudTrail. Amazon explains it as a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account~\cite{hid-sp18-518-CloudTrail-user-guide}. To simplify, AWS provides a service you can use to meet logging requirements you have personally to logging requirements that are directed by a higher entity such as government or a regulatory body.
 
 \section{How it works}
 
-Now that I have shared what CloudTrail is and how it can help, let’s discuss about how it works. CloudTrail will record activity, based on your configuration, into an AWS S3 bucket. The files are compressed before they are written and they will leverage a JSON format for easy consumption. The convention for storing the files is two parts, path and filename. The path will follow a convention of account/region/date and each day will have its own path.  The filename of the compressed file follows a convention of account/region/timestamp. 
-You may have noticed that the default path of account to region may not work well for a multi-account, multi-region AWS instance. There are options to define logging for multi-region where the configuration can be applied to all known existing regions and even configured to include new ones when they come online by default. Additionally, for multi-user situations, you can leverage AWS IAM to set global logging for all accounts as well.
+Now that I have shared what CloudTrail is and how it can help, let’s discuss about how it works. CloudTrail will record activity, based on your configuration, into an AWS S3 bucket~\cite{hid-sp18-518-CloudTrail-log-example}. The files are compressed before they are written and they will leverage a JSON format for easy consumption. The convention for storing the files is two parts, path and filename. The path will follow a convention of account/region/date and each day will have its own path.  The filename of the compressed file follows a convention of account/region/timestamp. 
+You may have noticed that the default path of account to region may not work well for a multi-account, multi-region AWS instance. There are options to define logging for multi-region where the configuration can be applied to all known existing regions and even configured to include new ones when they come online by default~\cite{hid-sp18-518-CloudTrail-global-events}. Additionally, for multi-user situations, you can leverage AWS IAM to set global logging for all accounts as well.
 
 \section{Best Practices}
 
-To ensure no one can intentionally or accidentally delete your CloudTrail logs, it is important to leverage features in IAM. With IAM, you can grant access per user on who is authorized to read logs stored in the CloudTrail S3 bucket or who can make changes to the CloudTrail configuration. It is also recommended to leverage features like Multi-Factor Authentication, which can be used to ensure that a request to delete an S3 bucket for CloudTrail logs is legitimate. 
+To ensure no one can intentionally or accidentally delete your CloudTrail logs, it is important to leverage features in IAM. With IAM, you can grant access per user on who is authorized to read logs stored in the CloudTrail S3 bucket or who can make changes to the CloudTrail configuration. It is also recommended to leverage features like Multi-Factor Authentication, which can be used to ensure that a request to delete an S3 bucket for CloudTrail logs is legitimate~\cite{hid-sp18-518-CloudTrail-user-guide}. 
 Another aspect where IAM can help you with CloudTrail is ensuring the logs are owned by a service account. Access requests to the log data can be controlled by only authorizing access by log analysis and correlation service accounts and a human would never had direct access to the logs stored in S3. This helps ensure access control is not lost if your organization’s use of AWS IAM continues to grow. 
-Now that you have limited who could accidentally delete your logs, how do you ensure someone doesn’t just tamper with the logs? That is where the CloudTrail log integrity solution can help. The process will create hashes for the current log metadata and appends some information from the previous log archive. That way you can walk back the integrity of your logs and quickly identify which log was tampered with. The log validation service also provides you a tool to assist with validation and you just need to provide it a time range to validate.
+Now that you have limited who could accidentally delete your logs, how do you ensure someone doesn’t just tamper with the logs? That is where the CloudTrail log integrity solution can help. The process will create hashes for the current log metadata and appends some information from the previous log archive. That way you can walk back the integrity of your logs and quickly identify which log was tampered with. The log validation service also provides you a tool to assist with validation and you just need to provide it a time range to validate~\cite{hid-sp18-518-CloudTrail-user-guide}.
 Another best practice is to use the AWS Quick Setup to reduce error caused by manual implementation. The command create-subscription will automate the creation of an S3 bucket and will begin the login. An even better approach is to use features like AWS CloudFormation to automate CloudTrail configuration for every EC2 instance.
 
 \section{How to view the logs}
 
 To ensure no one can intentionally or accidentally delete your CloudTrail logs, it is important to leverage features in IAM. With IAM, you can grant access per user on who is authorized to read logs stored in the CloudTrail S3 bucket or who can make changes to the CloudTrail configuration. It is also recommended to leverage features like Multi-Factor Authentication, which can be used to ensure that a request to delete an S3 bucket for CloudTrail logs is legitimate. 
 Another aspect where IAM can help you with CloudTrail is ensuring the logs are owned by a service account. Access requests to the log data can be controlled by only authorizing access by log analysis and correlation service accounts and a human would never had direct access to the logs stored in S3. This helps ensure access control is not lost if your organization’s use of AWS IAM continues to grow. 
-Now that you have limited who could accidentally delete your logs, how do you ensure someone doesn’t just tamper with the logs? That is where the CloudTrail log integrity solution can help. The process will create hashes for the current log metadata and appends some information from the previous log archive. That way you can walk back the integrity of your logs and quickly identify which log was tampered with. The log validation service also provides you a tool to assist with validation and you just need to provide it a time range to validate.
+Now that you have limited who could accidentally delete your logs, how do you ensure someone doesn’t just tamper with the logs? That is where the CloudTrail log integrity solution can help. The process will create hashes for the current log metadata and appends some information from the previous log archive. That way you can walk back the integrity of your logs and quickly identify which log was tampered with. The log validation service also provides you a tool to assist with validation and you just need to provide it a time range to validate~\cite{hid-sp18-518-CloudTrail-log-sharing}.
 Another best practice is to use the AWS Quick Setup to reduce error caused by manual implementation. The command create-subscription will automate the creation of an S3 bucket and will begin the login. An even better approach is to use features like AWS CloudFormation to automate CloudTrail configuration for every EC2 instance.
 
 \section{Conclusion}
