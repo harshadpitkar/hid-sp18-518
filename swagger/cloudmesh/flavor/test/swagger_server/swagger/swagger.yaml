@@ -1,0 +1,94 @@
+---
+swagger: "2.0"
+info:
+  description: "A simple service to pull OpenStack flavor"
+  version: "0.0.1"
+  title: "filter"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    name: "Michael Robinson"
+  license:
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/cloudmesh/flavor"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /flavor:
+    get:
+      tags:
+      - "compute"
+      - "openstack"
+      summary: "Get flavor"
+      description: "Get specific flavor by id"
+      operationId: "get_openstack_compute_flavor"
+      parameters:
+      - name: "subscriptionId"
+        in: "query"
+        description: "subscription id"
+        required: true
+        type: "string"
+      - name: "flavor_id"
+        in: "path"
+        description: "Flavor id"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        404:
+          description: "Flavor id does not exist"
+        500:
+          description: "An unexpected error occurred"
+          schema:
+            $ref: "#/definitions/inline_response_500"
+      x-swagger-router-controller: "swagger_server.controllers.compute_controller"
+definitions:
+  inline_response_200:
+    properties:
+      ephemeralDiskInGb:
+        type: "integer"
+        description: "VM ephemeral disk size in GB"
+      vcpus:
+        type: "integer"
+        description: "Number of virtual CPUs"
+      href:
+        type: "string"
+        description: "Url to a flavor"
+      name:
+        type: "string"
+        description: "Flavor name"
+      diskInGb:
+        type: "integer"
+        description: "Disk size in GB"
+      ramInMb:
+        type: "integer"
+        description: "Memory size in MB"
+      id:
+        type: "string"
+        description: "Flavor id"
+    description: "Flavor"
+    example:
+      ramInMb: 5
+      name: "name"
+      diskInGb: 1
+      href: "href"
+      id: "id"
+      vcpus: 6
+      ephemeralDiskInGb: 0
+  inline_response_500:
+    properties:
+      status:
+        type: "integer"
+      timestamp:
+        type: "string"
+      url:
+        type: "string"
+      exec_info:
+        type: "string"
