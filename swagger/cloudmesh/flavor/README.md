@@ -7,6 +7,8 @@ This REST API is intended to allow users to request which flavor of OpenStack is
 
 The REST service should conform to Swagger/OpenAPI 2.0 specification. 
 
+Credit for framing the how on this to Shagufta Pathan.
+
 ## Implementation :
 * The basics of the REST service is defined in the YAML document `localhost.yaml` file
 * POST operation has been implemented to post the command, username and hostname
