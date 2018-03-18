@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Shagufta Pathan <spathan@iu.edu>
+#originally provided by Shagufta Pathan <spathan@iu.edu>
 
 RUN apt-get update -q && apt-get install -qy \
  build-essential \
@@ -32,9 +32,9 @@ RUN pyenv install 2.7.14
 RUN pyenv global 2.7.14
 RUN python -m ensurepip
 
-RUN git clone https://github.com/cloudmesh-community/hid-sp18-516.git
+RUN git clone https://github.com/cloudmesh-community/hid-sp18-518.git
 
-WORKDIR /hid-sp18-516/swagger
+WORKDIR /hid-sp18-518/swagger
 
 RUN wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O swagger-codegen-cli.jar
 
