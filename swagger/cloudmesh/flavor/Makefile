@@ -22,14 +22,6 @@ service: dest
 start: 
 	cd $(DESTDIR) && python -m swagger_server
 
-test:
-	echo "Executing curl command1 on VM2:"
-	curl -H "Authorization: Basic YWRtaW46c2VjcmV0" -H "Content-Type:application/json" -X POST -d '{"userName": "sheena", "hostName": "192.168.56.102", "command": "ls -l"}' http://localhost:8080/cloudmesh/localhost
-	echo "Executing curl command2 on VM2:"
-	curl -H "Authorization: Basic YWRtaW46c2VjcmV0" -H "Content-Type:application/json" -X POST -d '{"userName": "sheena", "hostName": "192.168.56.102", "command": "uname -a"}' http://localhost:8080/cloudmesh/localhost
-	echo "Executing curl command3 without Basic Auth:"
-	curl -H "Content-Type:application/json" -X POST -d '{"userName": "sheena", "hostName": "192.168.56.102", "command": "ls -l"}' http://localhost:8080/cloudmesh/localhost
-            
 stop:
 	ps -ef | grep swagger | grep -v "grep"| awk '{print $$2}' | xargs kill -9
 
