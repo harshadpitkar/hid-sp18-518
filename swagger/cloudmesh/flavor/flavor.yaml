@@ -1,11 +1,10 @@
+#credit to https://app.swaggerhub.com/apis/mikespub/eos-swagger_definition/1.0.2#/compute/get_openstack_compute_flavor for code 
 swagger: "2.0"
 info: 
   version: "0.0.1"
   title: "filter"
   description: "A simple service to pull OpenStack flavor"
   termsOfService: "http://swagger.io/terms/"
-  contact: 
-    name: "Michael Robinson"
   license: 
     name: "Apache"
 host: "localhost:8080"
