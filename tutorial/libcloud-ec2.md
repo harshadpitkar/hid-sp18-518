@@ -58,6 +58,7 @@ To view your existing nodes, you can leverage
 `nodes = driver.list_nodes()`
 
 `print(nodes)`
+
 `[<Node: uuid=ec666f44f5fe597924877a590a3dbdc7a1222e7d, state=RUNNING>]`
 
 To create a node, you will need to define some criteria on what type you would like.
@@ -84,6 +85,7 @@ Now to call create_node with our local variables to build a T1.micro Redhat inst
 Last, notice when node is printed, the status is listed as PENDING. This is because there are additional tasks you must take with SSH keys. You can use your browser to review EC2 and finalize and there are additional guides that can show you how to automate that aspect as well.
 
 `print(node)`
+
 `<name=IU Cloud Computing, state=PENDING>`
 
 There are a lot of possibilities with libcloud and for EC2, more examples can be found here.  
