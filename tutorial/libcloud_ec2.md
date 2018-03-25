@@ -17,11 +17,13 @@ Now that you have installed libcloud, let’s take a look at what it makes avail
 First, open python and import libcloud like below.
 
 `python`
+
 `>>> import libcloud`
 
 A useful feature to use in Python is the help() function.
 
 `>>> help(libcloud)`
+
 `>>> help(libcloud.compute)`
 
 
