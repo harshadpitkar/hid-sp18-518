@@ -18,13 +18,13 @@ First, open python and import libcloud like below.
 
 `python3`
 
-`>>> import libcloud`
+`import libcloud`
 
 A useful feature to use in Python is the help() function.
 
-`>>> help(libcloud)`
+`help(libcloud)`
 
-`>>> help(libcloud.compute)`
+`help(libcloud.compute)`
 
 Now that you have familiarized yourself with libcloud, let's begin to use it. For this tutorial, we will be leveraging libcloud to configure and manage EC2 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be its own topic, I recommend looking at the configuration guide here https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html
 
@@ -33,24 +33,24 @@ Now that you have credentials set up for AWS, we need to tell libcloud which pro
 The libcloud.compute can be defined with your flavor of cloud provider. Since EC2 is the goal, the following will define EC2 and declare a local variable to store the libcloud EC2 client.
 
 
-`>>> from libcloud.compute.types import Provider`
+`from libcloud.compute.types import Provider`
 
-`>>> from libcloud.compute.providers import get_driver`
+`from libcloud.compute.providers import get_driver`
 
-`>>> client = get_driver(Provider.EC2)`
+`client = get_driver(Provider.EC2)`
 
 Next, we will need to define some local variables to store the credentials to be used. 
 
-`>>> ACCESS_ID = '<ENTER ACCESS ID HERE>'`
+`ACCESS_ID = '<ENTER ACCESS ID HERE>'`
 
-`>>> SECRET_KEY = '<ENTER YOUR SECRET KEY HERE'`
+`SECRET_KEY = '<ENTER YOUR SECRET KEY HERE'`
 
 Once that is set up, you can define your EC2 driver with the region you prefer.
 
-`>>> ec2_driver = client(ACCESS_ID, SECRET_KEY, region="us-east-1")`
+`ec2_driver = client(ACCESS_ID, SECRET_KEY, region="us-east-1")`
 
 To test the connection, you can request the available EC2 sizes and print them out using:
 
-`>>> print (driver.list_sizes())`
+`print (driver.list_sizes())`
 
 To learn more about Libcloud and it's other features, please visit http://libcloud.readthedocs.io/en/latest/
