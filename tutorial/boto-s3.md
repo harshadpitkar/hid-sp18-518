@@ -1,4 +1,4 @@
-ope#Boto3 for managing S3
+#Boto3 for managing S3
 
 ##Overview
 Python libraries exist now that help you abstract your project from your cloud 
