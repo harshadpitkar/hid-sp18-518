@@ -33,15 +33,15 @@ Now that you have credentials set up for AWS, we need to tell boto3 which provid
 
 The boto3.client or more specifically for S3, the boto3.resource can be defined with your flavor of cloud provider. Since s3 is the goal, the following will define s3 and declare a local variable to store the boto3 s3 client.
 
-'>>> s3 = boto3.client('s3')'
+`>>> s3 = boto3.client('s3')`
 
 Next, if you have s3 buckets already in place, you can use the following to list them. This will test your credentials and setup and ensure you can take on more advanced tasks with boto3.
 
 Using list_buckets() function will allow us to store a JSON response for buckets that the credentials have access to. To print out the result, you can point to the Buckets array.
 
-'>>> response = s3.list_buckets()'
+`>>> response = s3.list_buckets()`
 
-'>>> print response['Buckets']
-[{u'CreationDate': datetime.datetime(2018, 3, 25, 18, 22, 8, tzinfo=tzutc()), u'Name': 'bucket-for-iu-cloud-computing'}]'
+`>>> print response['Buckets']
+[{u'CreationDate': datetime.datetime(2018, 3, 25, 18, 22, 8, tzinfo=tzutc()), u'Name': 'bucket-for-iu-cloud-computing'}]`
 
 To learn more about Boto and it's other features, please visit http://boto3.readthedocs.io/en/latest/
