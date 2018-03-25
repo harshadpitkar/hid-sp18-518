@@ -14,6 +14,8 @@ To begin using the boto3 library in your python environment, you need to install
 
 Now that you have installed boto3, let’s take a look at what it makes available in the console editor.
 
+### Introduction
+
 First, open python and import boto3 like below.
 
 `python3`
@@ -26,16 +28,21 @@ A useful feature to use in Python is the help() function.
 
 `help(boto3.s3)`
 
+### Credentials
 
 Now that you have familiarized yourself with boto3, let's begin to use it. For this tutorial, we will be leveraging boto3 to configure and manage S3 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be its own topic, I recommend looking at the configuration guide here http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration
 
 Now that you have credentials set up for AWS, we need to tell boto3 which provider you will be leveraging. 
+
+### Initial Setup
 
 The boto3.client or more specifically for S3, the boto3.resource can be defined with your flavor of cloud provider. Since s3 is the goal, the following will define s3 and declare a local variable to store the boto3 s3 client.
 
 `s3 = boto3.client('s3')`
 
 Next, if you have s3 buckets already in place, you can use the following to list them. This will test your credentials and setup and ensure you can take on more advanced tasks with boto3.
+
+### View S3 buckets
 
 Using list_buckets() function will allow us to store a JSON response for buckets that the credentials have access to. To print out the result, you can point to the Buckets array.
 
@@ -44,10 +51,14 @@ Using list_buckets() function will allow us to store a JSON response for buckets
 `print response['Buckets']
 [{u'Name': 'bucket-for-iu-cloud-computing'}]`
 
+### Create S3 bucket
+
 To create a bucket, you can leverage create_bucket. Be mindful of DNS requirements for buckets and ensure the name is not already in use. The errors reported by boto3 are useful but sometimes quite verbose.
 
 For example
 `s3.create_bucket(Bucket='another-bucket-for-iu-cloud-computing')`
+
+### Other resources
 
 There are a large family of functions that can be found here:
 http://boto3.readthedocs.io/en/latest/reference/services/s3.html

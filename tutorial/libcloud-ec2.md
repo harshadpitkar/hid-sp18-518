@@ -14,6 +14,8 @@ To begin using the libcloud library in your python environment, you need to inst
 
 Now that you have installed libcloud, let’s take a look at what it makes available in the console editor.
 
+### Introduction
+
 First, open python and import libcloud like below.
 
 `python3`
@@ -26,9 +28,13 @@ A useful feature to use in Python is the help() function.
 
 `help(libcloud.compute)`
 
+### Credentials
+
 Now that you have familiarized yourself with libcloud, let's begin to use it. For this tutorial, we will be leveraging libcloud to configure and manage EC2 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be its own topic, I recommend looking at the configuration guide here https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html
 
 Now that you have credentials set up for AWS, we need to tell libcloud which provider you will be leveraging. 
+
+### Initial Setup
 
 The libcloud.compute can be defined with your flavor of cloud provider. Since EC2 is the goal, the following will define EC2 and declare a local variable to store the libcloud EC2 client.
 
@@ -53,12 +59,17 @@ To test the connection, you can request the available EC2 sizes and print them o
 
 `print (driver.list_sizes())`
 
+### View EC2 nodes
+
 To view your existing nodes, you can leverage
 
 `nodes = driver.list_nodes()`
 
 `print(nodes)`
+
 `[<Node: uuid=ec666f44f5fe597924877a590a3dbdc7a1222e7d, state=RUNNING>]`
+
+### Create EC2 node
 
 To create a node, you will need to define some criteria on what type you would like.
 
@@ -84,7 +95,10 @@ Now to call create_node with our local variables to build a T1.micro Redhat inst
 Last, notice when node is printed, the status is listed as PENDING. This is because there are additional tasks you must take with SSH keys. You can use your browser to review EC2 and finalize and there are additional guides that can show you how to automate that aspect as well.
 
 `print(node)`
+
 `<name=IU Cloud Computing, state=PENDING>`
+
+### Other resources
 
 There are a lot of possibilities with libcloud and for EC2, more examples can be found here.  
 
