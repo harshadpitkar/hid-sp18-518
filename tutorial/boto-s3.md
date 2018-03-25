@@ -26,4 +26,8 @@ A useful feature to use in Python is the help() function.
 
 `>>> help(boto.s3)`
 
+Now that you have familiarized yourself with boto, let's begin to use it. For this tutorial, we will be leveraging Boto to configure and manage S3 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be it's own topic, I recommend looking at the configuration guide here http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration
+
+
+
 To learn more about Boto and it's other features, please visit http://boto3.readthedocs.io/en/latest/
