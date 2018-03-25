@@ -26,4 +26,4 @@ A useful feature to use in Python is the help() function.
 
 `>>> help(libcloud.compute)`
 
-
+To learn more about Libcloud and it's other features, please visit http://libcloud.readthedocs.io/en/latest/
