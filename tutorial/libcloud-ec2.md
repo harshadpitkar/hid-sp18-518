@@ -53,4 +53,15 @@ To test the connection, you can request the available EC2 sizes and print them o
 
 `print (driver.list_sizes())`
 
-To learn more about Libcloud and it's other features, please visit http://libcloud.readthedocs.io/en/latest/
+To view your existing nodes, you can leverage
+
+`nodes = driver.list_nodes()`
+
+`print(nodes)`
+`[<Node: uuid=ec666f44f5fe597924877a590a3dbdc7a1222e7d, state=RUNNING>]`
+
+There are a lot of possibilities with libcloud and for EC2, more examples can be found here.  
+
+https://libcloud.readthedocs.io/en/latest/compute/drivers/ec2.html
+
+To learn more about Libcloud in general and its other features, please visit http://libcloud.readthedocs.io/en/latest/
