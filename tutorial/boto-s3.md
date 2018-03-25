@@ -44,4 +44,14 @@ Using list_buckets() function will allow us to store a JSON response for buckets
 `>>> print response['Buckets']
 [{u'CreationDate': datetime.datetime(2018, 3, 25, 18, 22, 8, tzinfo=tzutc()), u'Name': 'bucket-for-iu-cloud-computing'}]`
 
+To create a bucket, you can leverage create_bucket. Be mindful of DNS requirements for buckets and ensure the name is not already in use. The errors reported by boto3 are useful but sometimes quite verbose.
+
+For example
+`>>> s3.create_bucket(Bucket='another-bucket-for-iu-cloud-computing')`
+
+There are a large family of functions that can be found here:
+http://boto3.readthedocs.io/en/latest/reference/services/s3.html
+
+The functions are grouped between creation, deletion and aspects like permissions or policies for the bucket.
+
 To learn more about Boto and it's other features, please visit http://boto3.readthedocs.io/en/latest/
