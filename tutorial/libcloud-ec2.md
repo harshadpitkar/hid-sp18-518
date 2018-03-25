@@ -43,7 +43,7 @@ Next, we will need to define some local variables to store the credentials to be
 
 `ACCESS_ID = '<ENTER ACCESS ID HERE>'`
 
-`SECRET_KEY = '<ENTER YOUR SECRET KEY HERE'`
+`SECRET_KEY = '<ENTER YOUR SECRET KEY HERE>'`
 
 Once that is set up, you can define your EC2 driver with the region you prefer.
 
@@ -59,6 +59,32 @@ To view your existing nodes, you can leverage
 
 `print(nodes)`
 `[<Node: uuid=ec666f44f5fe597924877a590a3dbdc7a1222e7d, state=RUNNING>]`
+
+To create a node, you will need to define some criteria on what type you would like.
+
+`desired_size = 't1.micro'`
+
+`desired_image = 'ami-26ebbc5c'`
+
+The next two commands will store a local copy of available sizes and images, respectively.
+`sizes = driver.list_sizes()`
+
+`images = driver.list_images()`
+
+Now, to store the id in the required format to call create_node.
+
+`size = [s for s in sizes if s.id == desired_size][0]`
+
+`image = [i for i in images if i.id == desired_image][0]`
+
+Now to call create_node with our local variables to build a T1.micro Redhat instance.
+
+`node = driver.create_node(name="IU Cloud Computing", image=image, size=size)`
+
+Last, notice when node is printed, the status is listed as PENDING. This is because there are additional tasks you must take with SSH keys. You can use your browser to review EC2 and finalize and there are additional guides that can show you how to automate that aspect as well.
+
+`print(node)`
+`<name=IU Cloud Computing, state=PENDING>`
 
 There are a lot of possibilities with libcloud and for EC2, more examples can be found here.  
 
