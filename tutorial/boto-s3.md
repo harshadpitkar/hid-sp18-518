@@ -25,3 +25,5 @@ A useful feature to use in Python is the help() function.
 `>>> help(boto)`
 
 `>>> help(boto.s3)`
+
+To learn more about Boto and it's other features, please visit http://boto3.readthedocs.io/en/latest/
