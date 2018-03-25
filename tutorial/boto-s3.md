@@ -1,6 +1,6 @@
-#Boto3 for managing S3
+# Boto3 for managing S3
 
-##Overview
+## Overview
 Python libraries exist now that help you abstract your project from your cloud 
 provider. This may be important if you think you may need to use multiple cloud 
 providers or if you want to ensure you take steps to avoid provider lock-in. 
