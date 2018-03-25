@@ -1,6 +1,6 @@
-#Libcloud for managing EC2
+# Libcloud for managing EC2
 
-##Overview
+## Overview
 Python libraries exist now that help you abstract your project from your cloud 
 provider. This may be important if you think you may need to use multiple cloud 
 providers or if you want to ensure you take steps to avoid provider lock-in. 
@@ -10,13 +10,13 @@ management that is independent of cloud provider specific API calls.
 
 To begin using the libcloud library in your python environment, you need to install the apache-libcloud package using the Python package management system, pip.
 
-`sudo pip install apache-libcloud`
+`pip install apache-libcloud`
 
 Now that you have installed libcloud, let’s take a look at what it makes available in the console editor.
 
 First, open python and import libcloud like below.
 
-`python`
+`python3`
 
 `>>> import libcloud`
 
@@ -25,5 +25,32 @@ A useful feature to use in Python is the help() function.
 `>>> help(libcloud)`
 
 `>>> help(libcloud.compute)`
+
+Now that you have familiarized yourself with libcloud, let's begin to use it. For this tutorial, we will be leveraging libcloud to configure and manage EC2 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be its own topic, I recommend looking at the configuration guide here https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html
+
+Now that you have credentials set up for AWS, we need to tell libcloud which provider you will be leveraging. 
+
+The libcloud.compute can be defined with your flavor of cloud provider. Since EC2 is the goal, the following will define EC2 and declare a local variable to store the libcloud EC2 client.
+
+
+`>>> from libcloud.compute.types import Provider`
+
+`>>> from libcloud.compute.providers import get_driver`
+
+`>>> client = get_driver(Provider.EC2)`
+
+Next, we will need to define some local variables to store the credentials to be used. 
+
+`>>> ACCESS_ID = '<ENTER ACCESS ID HERE>'`
+
+`>>> SECRET_KEY = '<ENTER YOUR SECRET KEY HERE'`
+
+Once that is set up, you can define your EC2 driver with the region you prefer.
+
+`>>> ec2_driver = client(ACCESS_ID, SECRET_KEY, region="us-east-1")`
+
+To test the connection, you can request the available EC2 sizes and print them out using:
+
+`>>> print (driver.list_sizes())`
 
 To learn more about Libcloud and it's other features, please visit http://libcloud.readthedocs.io/en/latest/

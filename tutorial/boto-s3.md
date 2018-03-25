@@ -16,7 +16,7 @@ Now that you have installed boto3, let’s take a look at what it makes availabl
 
 First, open python and import boto3 like below.
 
-`python`
+`python3`
 
 `>>> import boto3`
 
@@ -27,7 +27,7 @@ A useful feature to use in Python is the help() function.
 `>>> help(boto3.s3)`
 
 
-Now that you have familiarized yourself with boto3, let's begin to use it. For this tutorial, we will be leveraging boto3 to configure and manage S3 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be it's own topic, I recommend looking at the configuration guide here http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration
+Now that you have familiarized yourself with boto3, let's begin to use it. For this tutorial, we will be leveraging boto3 to configure and manage S3 in AWS. To do so, you first will need credentials for an active AWS account. As credential management can be its own topic, I recommend looking at the configuration guide here http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration
 
 Now that you have credentials set up for AWS, we need to tell boto3 which provider you will be leveraging. 
 
