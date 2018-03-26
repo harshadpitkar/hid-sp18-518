@@ -73,11 +73,11 @@ compressed file follows a convention of account/region/timestamp.
  	\label{fig:CloudTrail}
 \end{figure}
 
-You may have noticed that the default path of account to region may not work 
-well for a multi-account, multi-region AWS instance. There are options to 
-define logging for multi-region where the configuration can be applied to all 
-known existing regions and even configured to include new ones when they come 
-online by default~\cite{hid-sp18-518-CloudTrail-global-events}. Additionally, 
+The default path of account to region may not work well for a multi-account, 
+multi-region AWS instance. There are options to define logging for multi-region 
+where the configuration can be applied to all known existing regions and even 
+configured to include new ones when they come online by 
+default~\cite{hid-sp18-518-CloudTrail-global-events}. Additionally, 
 for multi-user situations, you can leverage AWS Identity and Access 
 Management~\cite{hid-sp18-518-CloudTrail-IAM} to set global logging for all 
 accounts as well.
@@ -113,7 +113,26 @@ the actions currently available to be called.
 \item StopLogging
 \end{itemize}
 
-Advanced configurations can be managed using 
+If you used the API call, the response from a successful query will respond with 
+a 200 HTTP status code and a JSON blob with the requested content. For example,
+when using LookupEvents, the response back for a query related to a user would be 
+include the following details.
+
+\begin{itemize}
+\item eventVersion
+\item userIdentity
+\item type
+\item principalId
+\item arn
+\item userName
+\item eventTime
+\item eventSource
+\item sourceIPAddress
+\item userAgent
+\item requestParameters
+\end{itemize}
+
+Advanced CloudTrail configurations can be managed using 
 CloudFormation~\cite{hid-sp18-518-CloudTrail-CloudFormation} which allows you
 to define multiple aspects of an AWS instance in a text file using YAML or 
 JSON formatted files. A visual editor is available in AWS to build a template
