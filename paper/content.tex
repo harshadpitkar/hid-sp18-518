@@ -205,14 +205,25 @@ This will allow you to only decompress the log files and consume them with
 LogStash when you have a need to. There are community YAML files available
 for this scenario as well.
 
+If you do choose to keep an active Spark or ElasticSearch-Logstash-Kibana
+instance up, it will give you a platform to define custom alerting based on
+aggregation that you not normally get with CloudTrail. Additionally, while
+CloudTrail logs are specific to AWS API calls, the consumption of logs for
+Spark and ElasticSearch-Logstash-Kibana are not limited to just CloudTrail.
+You could include logs from your own APIs or functions and include them into
+the repository. Rules can then be developed that chain the context between 
+CloudTrail and your other log sources which can enable some very specific
+and context rich alerting.
+
 \section{Conclusion}
 
-The AWS feature of CloudTrail is a log event generating service. CloudTrail 
-is used to monitor high-level access to your cloud infrastructure and also 
-generates an audit trail to identify when changes occurred. Once configured, you 
-can use other features to leverage CloudTrail logs so you can know immediately 
-when something has changed. The power of AWS CloudTrail allows you to automate and 
-leverage templates to build secure solutions repeatedly
+The AWS feature of CloudTrail is a log event generating service for AWS API 
+calls. CloudTrail is used to monitor high-level access to your cloud 
+infrastructure and also generates an audit trail to identify when changes 
+occurred. Once configured, you can use other features to leverage CloudTrail 
+logs so you can know immediately when something has changed. The power of AWS 
+ allows you to automate and leverage templates for the creation of CloudTrail
+ logs and your ability to review them.
 
 \begin{acks}
 
