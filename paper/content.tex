@@ -83,6 +83,14 @@ you configure which S3 bucket to use, prefixes you may wish for organization,
 encryption keys to be used as well as more complex features like custom event
 notifications to solutions like email, Slack channels or a text message.
 
+Advanced configurations can be managed using 
+CloudFormation~\cite{hid-sp18-518-CloudTrail-CloudFormation} which allows you
+to define multiple aspects of an AWS instance in a text file using YAML or 
+JSON formatted files. A visual editor is available in AWS to build a template
+or community-provided templates are also available. For CloudTrail, the use
+of CloudFormation ensures that all instances stood up that are using a template
+will have CloudTrail defined and set up as well.
+
 To ensure no one can intentionally or accidentally delete your CloudTrail logs,
 it is important to leverage features in Identity and Access Management. With 
 Identity and Access Management, you can grant access per user on who is 
@@ -92,12 +100,12 @@ to leverage features like Multi-Factor Authentication, which can be used to
 ensure that a request to delete an S3 bucket for CloudTrail logs is 
 legitimate~\cite{hid-sp18-518-CloudTrail-user-guide}. 
 
-Another aspect where IAM can help you with CloudTrail is ensuring the logs are 
-owned by a service account. Access requests to the log data can be controlled 
-by only authorizing access by log analysis and correlation service accounts and
- a human would never had direct access to the logs stored in S3. This helps 
-ensure access control is not lost if your organizational use of AWS IAM 
-continues to grow. 
+Another aspect where Identity and Access Management can help you with CloudTrail 
+is ensuring the logs are owned by a service account. Access requests to the log 
+data can be controlled by only authorizing access by log analysis and correlation 
+service accounts and a human would never had direct access to the logs stored in 
+S3. This helps ensure access control is not lost if your organizational use of 
+AWS Identity and Access Management continues to grow. 
 
 Now that you have limited who could accidentally delete your logs, how do you 
 ensure someone doesn’t just tamper with the logs? That is where the CloudTrail 
@@ -108,11 +116,12 @@ way you can walk back the integrity of your logs and quickly identify which log
 assist with validation and you just need to provide it a time range to 
 validate~\cite{hid-sp18-518-CloudTrail-user-guide}.
 
-Another best practice is to use the AWS Quick Setup to reduce error caused by 
-manual implementation. The command create-subscription will automate the 
-creation of an S3 bucket and will begin the login. An even better approach is 
-to use features like AWS CloudFormation to automate CloudTrail configuration 
-for every EC2 instance.
+Another solution you can use are called AWS Quick 
+Starts~\cite{hid-sp18-518-CloudTrail-Quick-Starts} which can reduce error 
+caused by manual implementation. The command create-subscription will automate the 
+creation of an S3 bucket and will begin the login. AWS provides these prebuilt
+solutions for customers who may not feel comfortable with using AWS or want
+to try a solution out before configuring on their own.
 
 \section{How to view the logs}
 
