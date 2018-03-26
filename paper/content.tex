@@ -177,7 +177,18 @@ range to validate~\cite{hid-sp18-518-CloudTrail-log-sharing}.
 
 \section{How to view the logs}
 
+The most common method to review the logs is with the AWS command line interface. 
+While useful, this is typically used for singular queries and is difficult to
+use for more in-depth uses of the log files. For a broader investigation, there
+are log correlation tools available that can be used to review CloudTrail logs.
 
+Depending on the size of your AWS instance, a solution like AWS Athena, Apache 
+Spark or an ElasticSearch-Logstash-Kibana instance may be useful. To begin, you
+would need to configure architecture to consume and post-process the data 
+placed by CloudTrail into the S3 bucket. The log files will need to be unzipped
+and transformed from JSON into Spark data frames. There is sample code published
+by AWS Labs, which makes beta AWS products, that can provide a 
+starter pack~\cite{hid-sp18-518-CloudTrail-timely}.
 
 \section{Conclusion}
 
