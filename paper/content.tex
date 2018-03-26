@@ -132,6 +132,13 @@ include the following details.
 \item requestParameters
 \end{itemize}
 
+Another solution you can use are called AWS Quick 
+Starts~\cite{hid-sp18-518-CloudTrail-Quick-Starts} which can reduce error 
+caused by manual implementation. The command create-subscription will automate the 
+creation of an S3 bucket and will begin the login. AWS provides these prebuilt
+solutions for customers who may not feel comfortable with using AWS or want
+to try a solution out before configuring on their own.
+
 Advanced CloudTrail configurations can be managed using 
 CloudFormation~\cite{hid-sp18-518-CloudTrail-CloudFormation} which allows you
 to define multiple aspects of an AWS instance in a text file using YAML or 
@@ -140,7 +147,7 @@ or community-provided templates are also available. For CloudTrail, the use
 of CloudFormation ensures that all instances stood up that are using a template
 will have CloudTrail defined and set up as well.
 
-To ensure no one can intentionally or accidentally delete your CloudTrail logs,
+To ensure no one can  accidentally delete your CloudTrail logs,
 it is important to leverage features in Identity and Access Management. With 
 Identity and Access Management, you can grant access per user on who is 
 authorized to read logs stored in the CloudTrail S3 bucket 
@@ -156,62 +163,30 @@ service accounts and a human would never had direct access to the logs stored in
 S3. This helps ensure access control is not lost if your organizational use of 
 AWS Identity and Access Management continues to grow. 
 
-Now that you have limited who could accidentally delete your logs, how do you 
-ensure someone doesn’t just tamper with the logs? That is where the CloudTrail 
-log integrity solution can help. The process will create hashes for the current 
-log metadata and appends some information from the previous log archive. That 
-way you can walk back the integrity of your logs and quickly identify which log
- was tampered with. The log validation service also provides you a tool to 
-assist with validation and you just need to provide it a time range to 
-validate~\cite{hid-sp18-518-CloudTrail-user-guide}.
+To ensure no one can intentionally or accidentally delete your CloudTrail logs,
+ it is important to leverage Identity and Access Management to limit access 
+per user on who is authorized to read logs stored in the CloudTrail S3 bucket 
+or who can make changes to the CloudTrail configuration. 
 
-Another solution you can use are called AWS Quick 
-Starts~\cite{hid-sp18-518-CloudTrail-Quick-Starts} which can reduce error 
-caused by manual implementation. The command create-subscription will automate the 
-creation of an S3 bucket and will begin the login. AWS provides these prebuilt
-solutions for customers who may not feel comfortable with using AWS or want
-to try a solution out before configuring on their own.
+The CloudTrail log integrity solution is a process which will create hashes 
+for the current log metadata and appends some information from the previous log 
+archive. That way you can walk back the integrity of your logs and quickly 
+identify which log was tampered with. The log validation service also provides 
+you a tool to assist with validation and you just need to provide it a time 
+range to validate~\cite{hid-sp18-518-CloudTrail-log-sharing}.
 
 \section{How to view the logs}
 
-To ensure no one can intentionally or accidentally delete your CloudTrail logs,
- it is important to leverage features in IAM. With IAM, you can grant access 
-per user on who is authorized to read logs stored in the CloudTrail S3 bucket 
-or who can make changes to the CloudTrail configuration. It is also recommended 
-to leverage features like Multi-Factor Authentication, which can be used to 
-ensure that a request to delete an S3 bucket for CloudTrail logs is legitimate.
- 
-An aspect where IAM can help you with CloudTrail is ensuring the logs are owned 
-by a service account. Access requests to the log data can be controlled by only 
-authorizing access by log analysis and correlation service accounts and a human
- would never had direct access to the logs stored in S3. This helps ensure 
-access control is not lost if your organization’s use of AWS IAM continues to 
-grow. 
 
-Now that you have limited who could accidentally delete your logs, how do you 
-ensure someone doesn’t just tamper with the logs? That is where the CloudTrail 
-log integrity solution can help. The process will create hashes for the current 
-log metadata and appends some information from the previous log archive. That 
-way you can walk back the integrity of your logs and quickly identify which log 
-was tampered with. The log validation service also provides you a tool to
- assist with validation and you just need to provide it a time range to 
-validate~\cite{hid-sp18-518-CloudTrail-log-sharing}.
-
-Another best practice is to use the AWS Quick Setup to reduce error caused by 
-manual implementation. The command create-subscription will automate the 
-creation of an S3 bucket and will begin the login. An even better approach is 
-to use features like AWS CloudFormation to automate CloudTrail configuration 
-for every EC2 instance.
 
 \section{Conclusion}
 
-This paper covered the AWS feature of CloudTrail which is a log event 
-generating service. CloudTrail is used to monitor high-level access to your 
-cloud infrastructure and also generates an audit trail to identify when changes 
-occurred. Once configured, you can use other features to leverage CloudTrail 
-logs so you can know immediately when something has changed. The power of AWS 
-to automate and leverage templates is a great opportunity to build even faster, 
-and even build security solutions even faster.
+The AWS feature of CloudTrail which is a log event generating service. CloudTrail 
+is used to monitor high-level access to your cloud infrastructure and also 
+generates an audit trail to identify when changes occurred. Once configured, you 
+can use other features to leverage CloudTrail logs so you can know immediately 
+when something has changed. The power of AWS CloudTrail allows you to automate and 
+leverage templates to build secure solutions repeatedly
 
 \begin{acks}
 
