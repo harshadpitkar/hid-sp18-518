@@ -71,14 +71,22 @@ well for a multi-account, multi-region AWS instance. There are options to
 define logging for multi-region where the configuration can be applied to all 
 known existing regions and even configured to include new ones when they come 
 online by default~\cite{hid-sp18-518-CloudTrail-global-events}. Additionally, 
-for multi-user situations, you can leverage AWS IAM to set global logging for 
-all accounts as well.
+for multi-user situations, you can leverage AWS Identity and Access 
+Management~\cite{hid-sp18-518-CloudTrail-IAM} to set global logging for all 
+accounts as well.
 
-\section{Best Practices}
+To manage CloudTrail, you can use the AWS command line interface, RESTful APIs
+or a software development kit for Python, Java or multiple other languages. 
+These methods will allow you to make view the existing logs, which are natively 
+built in for you for the first 90 days. The management interfaces also allow
+you configure which S3 bucket to use, prefixes you may wish for organization, 
+encryption keys to be used as well as more complex features like custom event
+notifications to solutions like email, Slack channels or a text message.
 
 To ensure no one can intentionally or accidentally delete your CloudTrail logs,
-it is important to leverage features in IAM. With IAM, you can grant access 
-per user on who is authorized to read logs stored in the CloudTrail S3 bucket 
+it is important to leverage features in Identity and Access Management. With 
+Identity and Access Management, you can grant access per user on who is 
+authorized to read logs stored in the CloudTrail S3 bucket 
 or who can make changes to the CloudTrail configuration. It is also recommended 
 to leverage features like Multi-Factor Authentication, which can be used to 
 ensure that a request to delete an S3 bucket for CloudTrail logs is 
