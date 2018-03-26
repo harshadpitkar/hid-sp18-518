@@ -89,6 +89,29 @@ you configure which S3 bucket to use, prefixes you may wish for organization,
 encryption keys to be used as well as more complex features like custom event
 notifications to solutions like email, Slack channels or a text message.
 
+The AWS command line environment is the most full-featured. To do so, you first 
+will need credentials for an active AWS account. As credential management can 
+be its own comlex topic,  the AWS configuration guide should be leveraged to 
+provide a step by step to configure credentials. The simplest way to set up a 
+trail is to use a command as follows: 
+
+aws cloudtrail create-trail --name my-trail --s3-bucket-name my-bucket
+
+The two parameters to declare are name, which is the unique name you want to 
+provide to the trail and the second is the s3 bucket to use.
+
+If you choose to use the RESTful API support, these are a few of
+the actions currently available to be called.
+
+\begin{itemize}
+\item AddTags
+\item CreateTrail
+\item DeleteTrail
+\item LookupEvents
+\item StartLogging
+\item StopLogging
+\end{itemize}
+
 Advanced configurations can be managed using 
 CloudFormation~\cite{hid-sp18-518-CloudTrail-CloudFormation} which allows you
 to define multiple aspects of an AWS instance in a text file using YAML or 
