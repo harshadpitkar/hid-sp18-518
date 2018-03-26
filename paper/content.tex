@@ -190,9 +190,17 @@ and transformed from JSON into Spark data frames. There is sample code published
 by AWS Labs, which makes beta AWS products, that can provide a 
 starter pack~\cite{hid-sp18-518-CloudTrail-timely}.
 
+Once you have the logs formatted in a manner that can be leveraged, you can
+find containers available running Apache Spark that can access S3 buckets. This
+would provide you a very powerful way to quickly go from command line queries
+for individual requests to a very powerful Big Data platform to investigate. 
+Additionally, using the available containers ensures you are only billed for
+the data you consume and review. You would still have the original zipped JSON
+log files to revert back to if needed.
+
 \section{Conclusion}
 
-The AWS feature of CloudTrail which is a log event generating service. CloudTrail 
+The AWS feature of CloudTrail is a log event generating service. CloudTrail 
 is used to monitor high-level access to your cloud infrastructure and also 
 generates an audit trail to identify when changes occurred. Once configured, you 
 can use other features to leverage CloudTrail logs so you can know immediately 
