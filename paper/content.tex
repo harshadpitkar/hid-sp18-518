@@ -39,30 +39,29 @@ account to check on what is going on, you notice containers running that you
 don’t recognize. How is this possible? Who did this? That is where 
 CloudTrail~\cite{hid-sp18-518-CloudTrail} can help.
 
-\section{Background}
-
 As cloud technologies are quickly adopted, one of the common mistakes is 
-skipping past features related to security. This paper will cover the aspect 
-of logging and monitoring, both features that are critical to ensuring 
+skipping past features related to security. To cover the aspect of
+logging and monitoring, both features that are critical to ensuring 
 appropriate use, and the intent is to help build understanding of how these 
 features can help you keep your system uptime high, your bills low and provide 
 you certainty that you know when changes occur.
 
-In AWS, one of the primary means of providing logging is through AWS 
+CloudTrail is a scalable, extensible and simplied logging service available 
+in AWS to be used to log all actions taken by multiple aspects of interacting
+with AWS. In AWS, one of the primary means of providing logging is through AWS 
 CloudTrail. Amazon explains it as a service that enables governance, 
 compliance, operational auditing, and risk auditing of your AWS 
 account~\cite{hid-sp18-518-CloudTrail-user-guide}. To simplify, AWS provides 
-a service you can use to meet logging requirements you have personally to 
-logging requirements that are directed by a higher entity such as government 
-or a regulatory body.
+a logging service that can be used to meet logging requirements, either ones
+you design personally or requirements that are directed by a higher entity 
+such as government or a regulatory body such as PCI-DSS or HIPAA.
 
 \section{How it works}
 
-Now that I have shared what CloudTrail is and how it can help, let us discuss 
-about how it works. CloudTrail will record activity, based on your 
-configuration, into an AWS S3 bucket~\cite{hid-sp18-518-CloudTrail-log-example}.
-The files are compressed before they are written and they will leverage a JSON 
-format for easy consumption. The convention for storing the files is two 
+CloudTrail will record activity, based on your configuration, into an 
+AWS S3 bucket~\cite{hid-sp18-518-CloudTrail-log-example}.
+The JSON-formatted log files are compressed before they are written into an 
+S3 bucket. The convention for storing the files consists of two 
 parts, path and filename. The path will follow a convention of 
 account/region/date and each day will have its own path.  The filename of the 
 compressed file follows a convention of account/region/timestamp. 
@@ -89,7 +88,7 @@ Another aspect where IAM can help you with CloudTrail is ensuring the logs are
 owned by a service account. Access requests to the log data can be controlled 
 by only authorizing access by log analysis and correlation service accounts and
  a human would never had direct access to the logs stored in S3. This helps 
-ensure access control is not lost if your organization’s use of AWS IAM 
+ensure access control is not lost if your organizational use of AWS IAM 
 continues to grow. 
 
 Now that you have limited who could accidentally delete your logs, how do you 
