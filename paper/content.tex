@@ -20,7 +20,7 @@ recording service provided by Amazon Web Services. The service allows you to
 track the history of account usage for your AWS instances. The service is not 
 on by default yet when configured, it will record all API calls from all 
 sources like the console, CLE, SDKs or CloudFormation. The data is written 
-into an S3 bucket via JSON and would include attributes lik user, IP address, 
+into an S3 bucket via JSON and would include attributes like user, IP address, 
 timestamp and the action the user took.
 \end{abstract}
 
@@ -65,6 +65,12 @@ S3 bucket. The convention for storing the files consists of two
 parts, path and filename. The path will follow a convention of 
 account/region/date and each day will have its own path.  The filename of the 
 compressed file follows a convention of account/region/timestamp. 
+
+\begin{figure}[!ht]
+	\centering\includegraphics[width=\columnwidth]{../images/Cloudtrail-How-it-works.png}
+	\caption{KNIME Architecture~\cite{hid-sp18-518-CloudTrail-CloudFormation-Image}}
+ 	\label{fig:CloudTrail}
+\end{figure}
 
 You may have noticed that the default path of account to region may not work 
 well for a multi-account, multi-region AWS instance. There are options to 
