@@ -12,7 +12,7 @@ Our research will measure how the portability of an application is impacted by d
 
 ## Introduction
 
-A high-level abstract of our final concept is below.
+The solution we will derive will further abstract attempts for portability to RESTful APIs. Developers are already confronted with many a lack of transparency on which cloud provider is optimal for the long-term sustainability of their application. Additionally, attempts to abstract cloud providers has helped yet still potentially locks you into solutions provided by Apache or communities like boto. Leveraging REST, we intend to introduce a standardized implementation that leverages cloud portability libraries to manage the diversity of cloud applications. A high-level abstract of our final concept is below.
 
 Table 1: Project Architecture
 
