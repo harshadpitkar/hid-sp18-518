@@ -22,10 +22,14 @@ Table 1: Project Architecture
   - Swagger development to design/build API services for UI
   - Python development to leverage boto/libcloud
   - Evidence of success porting a solution from/to AWS, Azure, Google Cloud
-
+- Comparison of porting solution manually to libcloud/boto by command line
+- Comparison of porting solution with libcloud/boto by commandline to RESTful API solution
 
 ## Technology Stack
 
+
+
 ## Special Consideration to Project Format
+Swagger API documentation
 
 ## References
