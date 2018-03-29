@@ -24,6 +24,7 @@ Table 1: Project Architecture
   - Evidence of success porting a solution from/to AWS, Azure, Google Cloud
 - Comparison of porting solution manually to libcloud/boto by command line
 - Comparison of porting solution with libcloud/boto by commandline to RESTful API solution
+- Conclusion
 
 ## Technology Stack
 
