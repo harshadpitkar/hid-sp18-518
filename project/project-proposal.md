@@ -34,3 +34,5 @@ Swagger API documentation
 
 ## References
 D. Petcu and A. Vasilakos, Portability in Clouds: Approaches and Research Opportunities, Scalable Computing: Practice and Experience, Vol. 15 No. 3, https://scpe.org/index.php/scpe/
+Cloud Security Council, Interoperability and Portability for Cloud
+Computing, http://www.cloud-council.org/deliverables/CSCC-Interoperability-and-Portability-for-Cloud-Computing-A-Guide.pdf
