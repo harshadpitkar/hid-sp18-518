@@ -25,14 +25,14 @@ Table 1: Project Architecture
 - RESTful API
   - Swagger development to design/build API services for UI
   - Python development to leverage boto/libcloud
-  - Evidence of success porting a solution from/to AWS, Azure, Google Cloud
+  - Evidence of success porting a solution from/to AWS, Azure, Google Cloud, OpenStack
 - Comparison of porting solution manually to libcloud/boto by command line
 - Comparison of porting solution with libcloud/boto by commandline to RESTful API solution
 - Conclusion
 
 ## Special Consideration to Project Format
 - Swagger API documentation
-- Comparison of command line tools to libcloud/boto
+- Comparison of command line tools to Python libraries libcloud and boto
 
 ## References
 - D. Petcu and A. Vasilakos, *Portability in Clouds: Approaches and Research Opportunities*, Scalable Computing: Practice and Experience, Vol. 15 No. 3, 2014, https://scpe.org/index.php/scpe/
