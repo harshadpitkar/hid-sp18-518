@@ -1,6 +1,6 @@
 # Dynamic API service  to enable ease of portability leveraging boto/libcloud
 
-Harshad Patkar, Sushant Athaley, Michael Robinson
+Harshad Pitkar, Sushant Athaley, Michael Robinson
 
 ## Keywords
 
