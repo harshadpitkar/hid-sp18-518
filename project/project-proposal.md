@@ -15,6 +15,14 @@ Table 1: Project Architecture
 ![Project Architecture](https://github.com/cloudmesh-community/hid-sp18-518/blob/master/project/images/proj_arch.png?raw=true)
 
 ## Scope of work
+- Value Hypothesis
+- Cycle time metrics on porting a solution without boto/libcloud
+- Lead time metrics on use of RESTful APIs compared to command line usage
+- RESTful API
+  - Swagger development to design/build API services for UI
+  - Python development to leverage boto/libcloud
+  - Evidence of success porting a solution from/to AWS, Azure, Google Cloud
+
 
 ## Technology Stack
 
