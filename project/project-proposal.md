@@ -8,11 +8,11 @@ hid-sp18-517, hid-sp18-402, hid-sp18-518, boto, libcloud
 
 ## Abstract
 
-## Introduction
-
 Our research will measure how the portability of an application is impacted by decisions made early in the software lifecycle when native cloud provider APIs are used. We will demonstrate how efforts to leverage scalable, reproducable solutions like boto and libcloud are advantageous. We will derive reproducable code using Swagger and Python to show how libraries like boto and libcloud can be used to migrate an application from one cloud provider to another with a measurable reduction in human error and with less time to execute. Additionally, we will leverage Swagger to develop RESTful APIs to further improve the gains. We will capture the results of the research, share the derived code and conclude how the research can be applied to existing and new development efforts intending to leverage cloud providers.
 
-A high-level abstract of the concept is below.
+## Introduction
+
+A high-level abstract of our final concept is below.
 
 Table 1: Project Architecture
 
