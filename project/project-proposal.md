@@ -31,8 +31,8 @@ Table 1: Project Architecture
 - Conclusion
 
 ## Special Consideration to Project Format
-Swagger API documentation
-Comparison of command line tools to libcloud/boto
+- Swagger API documentation
+- Comparison of command line tools to libcloud/boto
 
 ## References
 - D. Petcu and A. Vasilakos, *Portability in Clouds: Approaches and Research Opportunities*, Scalable Computing: Practice and Experience, Vol. 15 No. 3, 2014, https://scpe.org/index.php/scpe/
