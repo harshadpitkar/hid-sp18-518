@@ -28,12 +28,9 @@ Table 1: Project Architecture
 - Comparison of porting solution with libcloud/boto by commandline to RESTful API solution
 - Conclusion
 
-## Technology Stack
-
-
-
 ## Special Consideration to Project Format
 Swagger API documentation
+Comparison of command line tools to libcloud/boto
 
 ## References
 - D. Petcu and A. Vasilakos, *Portability in Clouds: Approaches and Research Opportunities*, Scalable Computing: Practice and Experience, Vol. 15 No. 3, 2014, https://scpe.org/index.php/scpe/
