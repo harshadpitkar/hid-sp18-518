@@ -38,3 +38,4 @@ Swagger API documentation
 - Cloud Security Council, *Interoperability and Portability for Cloud
 Computing*, 2017, http://www.cloud-council.org/deliverables/CSCC-Interoperability-and-Portability-for-Cloud-Computing-A-Guide.pdf
 - M. Kostoska, M. Gusev and S. Ristov, *A New Cloud Services Portability Platform*, Procedia Engineering, Vol. 69, 2014, https://doi.org/10.1016/j.proeng.2014.03.118
+- L. Badger, D. Bernstein, R. Bohn, F. de Vaulx, M. Hogan, M. Iorga, J. Mao, J. Messina, K. Mills, E. Simmon, A. Sokol, J. Tong, F. Whiteside and D. Leaf, *High-Priority Requirements to Further USG Agency Cloud Computing Adoption*, Special Publication 500-293, https://dx.doi.org/10.6028/NIST.SP.500-293
