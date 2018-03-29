@@ -33,3 +33,4 @@ Table 1: Project Architecture
 Swagger API documentation
 
 ## References
+D. Petcu and A. Vasilakos, Portability in Clouds: Approaches and Research Opportunities, Scalable Computing: Practice and Experience, Vol. 15 No. 3, https://scpe.org/index.php/scpe/
