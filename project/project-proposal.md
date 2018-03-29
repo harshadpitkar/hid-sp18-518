@@ -4,7 +4,7 @@ Harshad Patkar, Sushant Athaley, Michael Robinson
 
 ## Keywords
 
-hid-sp18-517, hid-sp18-402, hid-sp18-518, REST, boto
+hid-sp18-517, hid-sp18-402, hid-sp18-518, boto, libcloud
 
 ## Abstract
 
