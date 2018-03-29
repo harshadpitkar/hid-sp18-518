@@ -10,6 +10,8 @@ hid-sp18-517, hid-sp18-402, hid-sp18-518, boto, libcloud
 
 ## Introduction
 
+Our research will measure how the portability of an application is impacted by decisions made early in the software lifecycle when native cloud provider APIs are used. We will demonstrate how efforts to leverage scalable, reproducable solutions like boto and libcloud are advantageous. We will derive reproducable code using Swagger and Python to show how libraries like boto and libcloud can be used to migrate an application from one cloud provider to another with a measurable reductiong in human error and with less time to execute.
+
 Table 1: Project Architecture
 
 ![Project Architecture](https://github.com/cloudmesh-community/hid-sp18-518/blob/master/project/images/proj_arch.png?raw=true)
