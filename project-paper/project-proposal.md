@@ -17,10 +17,10 @@ Cloud portability is a growing area of research due to the increased profilifera
 Developers are already confronted with a lack of transparency on which cloud provider is optimal for the long-term sustainability of their application. Additionally, attempts to abstract away from cloud providers are helpful yet their non-standardization still potentially locks you into the solutions provided by Apache or communities like boto. We will deliver a continuation of that abstraction concept with an accepted standard, REST, to extend libcloud and boto. By leveraging REST, we intend to introduce a standardized implementation that leverages cloud portability libraries to manage the diversity of cloud applications. A high-level abstract of our final concept is below.
 
 Table 1: Project Architecture
-
-![Project Architecture](https://github.com/cloudmesh-community/hid-sp18-518/blob/master/project/images/proj_arch.png?raw=true)
+![](images/proj-arch.png)
 
 ## Scope of work
+
 - Value Hypothesis
 - Cycle time metrics on porting a solution without boto/libcloud
 - Lead time metrics on use of RESTful APIs compared to command line usage
@@ -33,11 +33,13 @@ Table 1: Project Architecture
 - Conclusion
 
 ## Special Consideration to Project Format
+
 - Swagger API documentation
 - Comparison of command line tools to Python libraries libcloud and boto
 - Background on TOSCA
 
 ## References
+
 - D. Petcu and A. Vasilakos, *Portability in Clouds: Approaches and Research Opportunities*, Scalable Computing: Practice and Experience, Vol. 15 No. 3, 2014, https://scpe.org/index.php/scpe/
 - Cloud Security Council, *Interoperability and Portability for Cloud
 Computing*, 2017, http://www.cloud-council.org/deliverables/CSCC-Interoperability-and-Portability-for-Cloud-Computing-A-Guide.pdf
